@@ -1,23 +1,18 @@
 <?php // app/Http/Controllers/PagesController.php
-namespace AppHttpControllers;
+namespace App\Http\Controllers;
 
 use AppHttpRequests;
-use AppHttpControllersController;
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\PagesController;
 use DB;
 use IlluminateHttpRequest;
 
 class PagesController extends Controller {
     public function about ()  {
+        $data = [];
+            $data ["first_name"] = "Luke";
+            $data ["last_name"] = "Skywalker";
+            return view('pages.about', $data);
         return view ('Pages.about');
     }
 }
-
-class UserController extends Controller {
-    //データベース接続
-    public function database () {
-        $cats = DB::select('select name from cat_sousenkyo.cat_info;')
-        return view('Pages.database', ['name' => $name]);
-    }
-}
-
