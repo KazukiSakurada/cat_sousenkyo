@@ -6,7 +6,7 @@
 <body>
 <h1>database</h1>
 @foreach ($cats as $cat) 
-    {{ $cat->name }}
+   <p> {{ $cat->cat_url }} </p>
 @endforeach
 </body>
 </html>
